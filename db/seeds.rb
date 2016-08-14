@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+
+100.times do |post|
+  Post.create!(date: Faker::Date.between(1.year.ago, Date.today),
+               rationale: Faker::Hipster.paragraph(3, false, 2) )
+end
+
+puts "100 posts have been created"
