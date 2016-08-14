@@ -35,6 +35,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.4'
+  #  # this will let us create integration tests that will mimic user behavior and browser actions such as clicking on a link, filling out a form, etc.
+  gem 'capybara', '~> 2.5'
+
+  gem 'factory_girl_rails', '~> 4.5.0'
 end
 
 group :development do
@@ -45,3 +50,17 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  #should matchers
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  # library will clean up our test database to protect us against spec errors such as records not getting created due to uniqueness validations.
+  gem 'database_cleaner', '~> 1.5'
+  #  with Factory Girl installed we can dynamically create sample database records and use them in our specs
+  # gem 'factory_girl', '~> 4.5'
+
+  gem 'faker', '~> 1.6.1'
+end
+
+
+gem 'devise', '~> 3.5'
+gem 'friendly_id', '~> 5.1'
