@@ -65,3 +65,4 @@ end
 gem 'devise', '~> 3.5'
 gem 'friendly_id', '~> 5.1'
 gem 'bootstrap-sass'
+gem 'gritter', "1.2.0"
