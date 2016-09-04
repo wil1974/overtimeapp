@@ -66,3 +66,5 @@ gem 'devise', '~> 3.5'
 gem 'friendly_id', '~> 5.1'
 gem 'bootstrap-sass'
 gem 'gritter', "1.2.0"
+gem 'administrate', "~> 0.2.2"
+gem 'bourbon'
