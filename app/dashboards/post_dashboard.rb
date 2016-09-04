@@ -7,12 +7,14 @@ class PostDashboard < Administrate::BaseDashboard
   # Each different type represents an Administrate::Field object,
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
+  # .with_options(searchable: true) => only works for text and string and number
+  # DATETIME field not working.
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
     id: Field::Number,
-    date: Field::DateTime,
-    rationale: Field::Text,
-    created_at: Field::DateTime,
+    date: Field::DateTime.with_options(searchable: false),
+    rationale: Field::Text.with_options(searchable: true),
+    created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime,
   }.freeze
 
